@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trang của Huy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- THANH MENU -->
+    <header>
+        <div class="logo">Trang của Huy</div>
+
+        <nav>
+            <a href="#home">Trang chủ</a>
+            <a href="#study">Học tập</a>
+            <a href="#explore">Khám phá</a>
+            <a href="#assistant">Trợ lý</a>
+            <a href="#about">Về Huy</a>
+        </nav>
+    </header>
+
+
+    <!-- TRANG CHỦ -->
+    <section id="home" class="hero">
+
+        <p class="small-title">WEBSITE HỌC TẬP & KHÁM PHÁ</p>
+
+        <h1>
+            Học tập.
+            <span>Khám phá.</span>
+            Phát triển.
+        </h1>
+
+        <p>
+            Một góc nhỏ để học thêm kiến thức,
+            khám phá những điều thú vị và phát triển bản thân.
+        </p>
+
+        <!-- Ô TÌM KIẾM -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Tìm kiếm kiến thức..."
+            >
+
+            <button onclick="searchKnowledge()">
+                Tìm kiếm
+            </button>
+        </div>
+
+        <div id="searchResult"></div>
+
+    </section>
+
+
+    <!-- HỌC TẬP -->
+    <section id="study" class="section">
+
+        <div class="section-title">
+            <p>HỌC TẬP</p>
+            <h2>Chọn môn bạn muốn học</h2>
+        </div>
+
+        <div class="subject-grid">
+
+            <div class="subject-card" onclick="showLessons('toan')">
+                <div class="icon">📐</div>
+                <h3>Toán học</h3>
+                <p>Các kiến thức toán học dễ hiểu.</p>
+            </div>
+
+            <div class="subject-card" onclick="showLessons('khoahoc')">
+                <div class="icon">🔬</div>
+                <h3>Khoa học</h3>
+                <p>Khám phá thế giới xung quanh.</p>
+            </div>
+
+            <div class="subject-card" onclick="showLessons('dialy')">
+                <div class="icon">🌍</div>
+                <h3>Địa lý</h3>
+                <p>Tìm hiểu Trái Đất và Việt Nam.</p>
+            </div>
+
+            <div class="subject-card" onclick="showLessons('nguvan')">
+                <div class="icon">📖</div>
+                <h3>Ngữ văn</h3>
+                <p>Đọc hiểu và sử dụng tiếng Việt.</p>
+            </div>
+
+            <div class="subject-card" onclick="showLessons('tienganh')">
+                <div class="icon">🇬🇧</div>
+                <h3>Tiếng Anh</h3>
+                <p>Học từ vựng và ngữ pháp cơ bản.</p>
+            </div>
+
+            <div class="subject-card" onclick="showLessons('congnghe')">
+                <div class="icon">💻</div>
+                <h3>Công nghệ</h3>
+                <p>Máy tính, Internet, lập trình và AI.</p>
+            </div>
+
+        </div>
+
+
+        <!-- KHU VỰC HIỂN THỊ BÀI HỌC -->
+        <div id="lessonArea" class="lesson-area">
+
+            <h2>Chọn một môn học</h2>
+
+            <p>
+                Hãy chọn một môn ở phía trên để bắt đầu học.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- KHÁM PHÁ -->
+    <section id="explore" class="section">
+
+        <div class="section-title">
+            <p>KHÁM PHÁ</p>
+            <h2>Những điều thú vị</h2>
+        </div>
+
+        <div class="explore-grid">
+
+            <div class="explore-card">
+                <span>🌌</span>
+                <h3>Vũ trụ</h3>
+                <p>
+                    Tìm hiểu về các hành tinh,
+                    ngôi sao và không gian.
+                </p>
+            </div>
+
+            <div class="explore-card">
+                <span>🧠</span>
+                <h3>Não bộ</h3>
+                <p>
+                    Khám phá cách bộ não con người
+                    học tập và ghi nhớ.
+                </p>
+            </div>
+
+            <div class="explore-card">
+                <span>🤖</span>
+                <h3>Trí tuệ nhân tạo</h3>
+                <p>
+                    Tìm hiểu AI hoạt động như thế nào
+                    và đang thay đổi thế giới ra sao.
+                </p>
+            </div>
+
+            <div class="explore-card">
+                <span>🌳</span>
+                <h3>Thiên nhiên</h3>
+                <p>
+                    Khám phá động vật, thực vật
+                    và môi trường sống.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRỢ LÝ -->
+    <section id="assistant" class="section assistant">
+
+        <div class="section-title">
+            <p>TRỢ LÝ</p>
+            <h2>Hỏi thử một câu</h2>
+        </div>
+
+        <div class="assistant-box">
+
+            <input
+                type="text"
+                id="questionInput"
+                placeholder="Ví dụ: Trái Đất có bao nhiêu lớp?"
+            >
+
+            <button onclick="askAssistant()">
+                Hỏi
+            </button>
+
+        </div>
+
+        <div id="assistantAnswer">
+            <p>Trợ lý đang chờ câu hỏi của bạn...</p>
+        </div>
+
+    </section>
+
+
+    <!-- THÔNG TIN VỀ HUY -->
+    <section id="about" class="about">
+
+        <p class="small-title">VỀ MÌNH</p>
+
+        <h2>Lê Nhật Huy</h2>
+
+        <p>
+            Học sinh Trường Trung học cơ sở Yên Định 1.
+        </p>
+
+        <p>
+            Mình là một người vui tính, hòa đồng và luôn muốn
+            học hỏi thêm những điều mới.
+        </p>
+
+        <p>
+            Mục tiêu của mình là xây dựng một nơi giúp mọi người
+            học tập, khám phá kiến thức và phát triển bản thân.
+        </p>
+
+    </section>
+
+
+    <!-- CHÂN TRANG -->
+    <footer>
+
+        <p>
+            Trang của Huy © 2026
+        </p>
+
+        <p>
+            Học tập • Khám phá • Phát triển
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
